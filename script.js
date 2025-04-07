@@ -21,15 +21,15 @@ const clickDiv = document.querySelectorAll('div')
 
 
 // Создай`div`.При клике на него его размер увеличивается на 10px.  
-const divELL = document.createElement('div')
-divELL.innerText = 'увеличивается на 10px'
-divELL.style.backgroundColor = 'red'
-divELL.style.width = 100 + 'px'
-divELL.style.height = 100 + 'vr'
-document.body.append(divELL)
-divELL.addEventListener('click', (e) => {
-    e.target.style.height += 10 + 'px';
-});
+// const divELL = document.createElement('div')
+// divELL.innerText = 'увеличивается на 10px'
+// divELL.style.backgroundColor = 'red'
+// divELL.style.width = 100 + 'px'
+// divELL.style.height = 5 + 'em'
+// document.body.append(divELL)
+// divELL.addEventListener('click', (e) => {
+//     divELL.style.height += 10 + 'px';
+// });
 
 
 
@@ -69,9 +69,30 @@ if(arrColor.length !=i){
     flad=0
     document.querySelector('.colorBtm').style.backgroundColor = '#fff'
 }
-//Gogool
+})
+
+
+
 
 //! Создай кнопку `"Сгенерировать"` и пустой`div`.При каждом клике кнопки в `div` должен появляться новый случайный номер от 1 до 100.
+const genBtm = document.createElement('button')
+genBtm.innerText="Сгенерировать"
+genBtm.style.padding = 9 + 'px'
+genBtm.borderRadius = 5 + 'px'
+genBtm.style.margin = 9+'px'
+document.body.append(genBtm)
+const divNumber = document.createElement('div')
+// divNumber.style.width= 10 + 'px'
+divNumber.style.innerText= ''
+document.body.append(divNumber)
+genBtm.addEventListener('click', (e)=>{
+    let numbersDiv = (Math.floor(Math.random() * 100) + 1);
+    divNumber.innerText = numbersDiv
+    divNumber.style.color = 'red'
+})
+
+// let numbersDiv = (Math.floor(Math.random() * 100) + 1);
+
 
 
 // Создай массив строк`["Кнопка 1", "Кнопка 2", "Кнопка 3"]`.Напиши функцию`createButtons(buttons)`, которая создаёт кнопку(`button`) для каждой строки и добавляет её в`body`.  Добавь обработчик клика, который выводит в консоль текст кнопки.  
