@@ -10,14 +10,27 @@ p.addEventListener('click', (e) => {
 for (let i = 0; i < 5; i++) {
     const div = document.createElement('div')
     const btm = document.createElement('button')
-    // document.div.append(btm)
+    btm.classList.add('btmClick')
+    div.append(btm)
     btm.innerText = 'Скрыть'
     document.body.append(div)
 }
-const clickDiv = document.querySelectorAll('div')
-// div.addEventListener('click',(e)=>{
+// const clickDiv = document.querySelectorAll('div')
+//   div.addEventListener('click',(e)=>{
+//     e.stopPropagation()
 
 // })
+// btm.addEventListener('click', func1);
+
+// function func1() {
+//     let shadow = document.getElementById('.btmClick');
+//     if (shadow.style.display !== 'none') {
+//         shadow.style.display = "none";
+//     } else {
+//         shadow.style.display = "block";
+//     }
+
+// };
 
 
 // Создай`div`.При клике на него его размер увеличивается на 10px.  
@@ -60,15 +73,15 @@ colorBtm.style.backgroundColor = "green"
 colorBtm.style.padding = 9 + 'px'
 colorBtm.style.borderRadius = 5 + 'px'
 let i = 0
-colorBtm.addEventListener('click', function colorClick(){
-if(arrColor.length !=i){
-    console.log(arrColor[i]);
-    i++
-    document.querySelector('.colorBtm').style.backgroundColor=arrColor[i]
-}else{
-    flad=0
-    document.querySelector('.colorBtm').style.backgroundColor = '#fff'
-}
+colorBtm.addEventListener('click', function colorClick() {
+    if (arrColor.length != i) {
+        console.log(arrColor[i]);
+        i++
+        document.querySelector('.colorBtm').style.backgroundColor = arrColor[i]
+    } else {
+        flad = 0
+        document.querySelector('.colorBtm').style.backgroundColor = '#fff'
+    }
 })
 
 
@@ -76,16 +89,16 @@ if(arrColor.length !=i){
 
 //! Создай кнопку `"Сгенерировать"` и пустой`div`.При каждом клике кнопки в `div` должен появляться новый случайный номер от 1 до 100.
 const genBtm = document.createElement('button')
-genBtm.innerText="Сгенерировать"
+genBtm.innerText = "Сгенерировать"
 genBtm.style.padding = 9 + 'px'
 genBtm.borderRadius = 5 + 'px'
-genBtm.style.margin = 9+'px'
+genBtm.style.margin = 9 + 'px'
 document.body.append(genBtm)
 const divNumber = document.createElement('div')
 // divNumber.style.width= 10 + 'px'
-divNumber.style.innerText= ''
+divNumber.style.innerText = ''
 document.body.append(divNumber)
-genBtm.addEventListener('click', (e)=>{
+genBtm.addEventListener('click', (e) => {
     let numbersDiv = (Math.floor(Math.random() * 100) + 1);
     divNumber.innerText = numbersDiv
     divNumber.style.color = 'red'
