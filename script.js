@@ -104,11 +104,24 @@ genBtm.addEventListener('click', (e) => {
     divNumber.style.color = 'red'
 })
 
-// let numbersDiv = (Math.floor(Math.random() * 100) + 1);
-
 
 
 // Создай массив строк`["Кнопка 1", "Кнопка 2", "Кнопка 3"]`.Напиши функцию`createButtons(buttons)`, которая создаёт кнопку(`button`) для каждой строки и добавляет её в`body`.  Добавь обработчик клика, который выводит в консоль текст кнопки.  
+
+const btmArr = ["Кнопка 1", "Кнопка 2", "Кнопка 3"]
+function createButtons(buttons){
+    let i = 0
+    if(i<btmArr.length){
+        const btm =document.createElement('button')
+        btm.classList.add('buttonsClick')
+        btm.innerText=i[elem]
+        document.body.append(btm)
+        i++
+
+    }
+}
+
+
 
 //  Напиши функцию `generateBookList(books)`, которая принимает массив объектов `books`, где каждый объект содержит `title` и `author`. Функция должна создать список (`ul`), в котором каждый элемент (`li`) содержит название книги и автора, а затем добавить этот список в `body`.  
 
@@ -121,7 +134,12 @@ genBtm.addEventListener('click', (e) => {
 //   { title: "Мастер и Маргарита", author: "М. А. Булгаков" }
 // ];
 
-// Создай список(`ul > li`).При клике на `li` он становится синим, а все остальные возвращаются к стандартному цвету.  
+// Создай список(`ul > li`).При клике на `li` он становится синим, а все остальные возвращаются к стандартному цвету. 
+const ulEll = document.createElement('ul')
+document.body.append(ulEll) 
+const liEll = document.createElement('li')
+liEll.innerText='При клике на'
+liEll.append(ulEll)
 
 // Создай функцию `createProductCard(product)`, которая принимает объект `product` с полями `name`, `price`, `available`. Функция должна создать карточку товара (`div`), в которой название товара (`h2`), цена (`p`), и статус наличия (`p`, где текст "В наличии" или "Нет в наличии" в зависимости от `available`). Добавь карточку в `body`.  
 // Используй тернарный оператор для отображения статуса наличия.  
@@ -153,8 +171,19 @@ genBtm.addEventListener('click', (e) => {
 // Больше 1024px — "Десктоп".
 // Дополнительно:
 // Добавь событие resize, чтобы при изменении размера окна результат обновлялся.
+function windowWidth() {
+    if (window.innerWidth < 576){
+        return "Мобильное устройство"
+    } else if(window.innerWidth <= 576 && window.innerWidth >1024){
+        return "Планшет"
+    }else {
+        return "Десктоп"
+    }
 
 // Добавь поле ввода (или prompt) и кнопку "Проверить". Пользователь вводит название товара.
+
+// const promptEll = prompt('Проверить')
+
 // Если товар есть и available === true — вывести "Товар в наличии"
 // Если available === false — "Товар временно отсутствует"
 // Если товара нет в массиве — "Такого товара нет"
@@ -167,4 +196,8 @@ genBtm.addEventListener('click', (e) => {
 
 // Создай массив чисел const numbers = [10, 5, 30, 8, 20].
 // "Оставить четные" — оставляет только четные числа и выводит их.
+// numbers = [10, 5, 30, 8, 20]
+// const numbersFIlter = numbers.filter(num =>num%2===0).sort((a,b)=>a-b)
+// console.log(numbersFIlter);
+
 // "Отсортировать по возрастанию" — сортирует массив и выводит его.
